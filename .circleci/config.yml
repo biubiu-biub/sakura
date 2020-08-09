@@ -19,13 +19,13 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     environment:
-      COSTUM_FLAGS: '-gcflags="-N -l"'
+      TEST_FLAGS: '-coverprofile=coverage.txt -covermode=atomic'
     steps:
       - checkout
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
-      - run: cd ./pkg/main && go build ${GOFLAGS} && echo ${GOFLAGS} && go test && bash <(curl -s https://codecov.io/bash)
+      - run: cd ./pkg/main && go build ${GOFLAGS} && echo ${GOFLAGS} && go test ${TEST_FLAGS} && bash <(curl -s https://codecov.io/bash)
 
 
 
