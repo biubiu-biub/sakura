@@ -19,7 +19,7 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     environment:
-      GOFLAGS: '-gcflags="-N -l"'
+      COSTUM_FLAGS: '-gcflags="-N -l"'
     steps:
       - checkout
 
