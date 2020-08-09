@@ -19,7 +19,7 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     environment:
-      TEST_FLAGS: '-coverprofile=coverage.txt -covermode=atomic'
+      TEST_FLAGS: '-race -coverprofile=coverage.txt -covermode=atomic'
     steps:
       - checkout
 
