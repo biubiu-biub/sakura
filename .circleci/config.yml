@@ -26,9 +26,9 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
       - run: |
-        cd ./pkg/main
-        go build ${GOFLAGS}
-        go test
-        bash <(curl -s https://codecov.io/bash)
+         cd ./pkg/main
+         go build ${GOFLAGS}
+         go test
+         bash <(curl -s https://codecov.io/bash)
 
 
