@@ -7,5 +7,5 @@ import (
 )
 
 func TestEntry(t *testing.T) {
-	assert.Equal(t, entry.Ping(), "ping!", "The two words should be the same.")
+	assert.Equal(t, entry.Ping(), "ping", "The two words should be the same.")
 }
