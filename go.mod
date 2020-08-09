@@ -1,4 +1,4 @@
-module github.com/biubiu/sakura
+module github.com/biubiu-biub/sakura
 
 go 1.14
 

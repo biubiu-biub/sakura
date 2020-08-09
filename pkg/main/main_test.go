@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/biubiu/sakura/pkg/entry"
+	"github.com/biubiu-biub/sakura/pkg/entry"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
