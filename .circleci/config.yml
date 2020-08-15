@@ -16,6 +16,7 @@ jobs:
     steps:
       - checkout
       - kube-orb/install-kubectl
+      - kube-orb/install-kops
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
@@ -26,6 +27,7 @@ jobs:
             echo ${TEST_FLAGS}
             go build
             go test ${TEST_FLAGS}
+            kubectl get pods
             bash <(curl -s https://codecov.io/bash)
 
 
