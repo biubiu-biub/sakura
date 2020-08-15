@@ -1,7 +1,7 @@
 # Golang CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
-version: 2
+version: 2.1
 orbs:
   kube-orb: circleci/kubernetes@0.11.1
 jobs:
@@ -26,7 +26,6 @@ jobs:
             echo ${TEST_FLAGS}
             go build
             go test ${TEST_FLAGS}
-            kubectl get pods
             bash <(curl -s https://codecov.io/bash)
 
 
