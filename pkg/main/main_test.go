@@ -16,6 +16,7 @@ func TestSayName(t *testing.T){
 		common.Bird:"bird",
 		common.Dog:"dog",
 		common.Fish:"fish",
+		114514:"abaaba",
 	}
 
     for tp,name:=range expected {
