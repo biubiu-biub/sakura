@@ -3,7 +3,7 @@
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 orbs:
-  kube: circleci/kubernetes@0.11.1
+  kube-orb: circleci/kubernetes@0.11.1
 jobs:
   build:
     docker:
@@ -15,7 +15,7 @@ jobs:
       TEST_FLAGS: '-race -coverprofile=coverage.txt -covermode=atomic'
     steps:
       - checkout
-      - kube/install-kubectl
+      - kube-orb/install-kubectl
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
