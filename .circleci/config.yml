@@ -2,8 +2,6 @@
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2.1
-orbs:
-  kube-orb: circleci/kubernetes@0.11.1
 jobs:
   build:
     docker:
@@ -15,8 +13,6 @@ jobs:
       TEST_FLAGS: '-race -coverprofile=coverage.txt -covermode=atomic'
     steps:
       - checkout
-      - kube-orb/install-kubectl
-      - kube-orb/install-kops
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
@@ -27,7 +23,6 @@ jobs:
             echo ${TEST_FLAGS}
             go build
             go test ${TEST_FLAGS}
-            kubectl get pods
             bash <(curl -s https://codecov.io/bash)
 
 

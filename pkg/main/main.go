@@ -9,9 +9,9 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	tp:=rand.Int()%4
-	fmt.Println("我只是只 ",sayName(tp))
+	fmt.Println("我只是只 ",SayName(tp))
 }
-func sayName(tp int) string{
+func SayName(tp int) string{
 	switch  tp{
 	case common.Dog:
 		return "dog"

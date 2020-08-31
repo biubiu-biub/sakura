@@ -20,6 +20,6 @@ func TestSayName(t *testing.T){
 	}
 
     for tp,name:=range expected {
-    	assert.Equal(t,sayName(tp),name,"returned value should be identical to excepted")
+    	assert.Equal(t,SayName(tp),name,"returned value should be identical to excepted")
 	}
 }
